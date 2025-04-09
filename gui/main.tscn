@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctkhahffi3j57"]
+[gd_scene load_steps=11 format=3 uid="uid://ctkhahffi3j57"]
 
 [ext_resource type="Script" uid="uid://btqcfb2jvei2c" path="res://gui/main.gd" id="1_mlcj6"]
 [ext_resource type="Texture2D" uid="uid://c2th51m7t5joe" path="res://graphics/Box3.png" id="1_npj5w"]
-[ext_resource type="Script" uid="uid://bwcxm7etly5tb" path="res://gui/WallpaperMode.cs" id="2_640sx"]
+[ext_resource type="Script" uid="uid://bk8nacjbgjagg" path="res://gui/dragable.gd" id="3_qkapk"]
+[ext_resource type="PackedScene" uid="uid://blkxbgp2i3glp" path="res://addons/clickthrough/nodes/clickthrough_gdscript/clickthrough_gdscript.tscn" id="4_kvgex"]
+[ext_resource type="PackedScene" uid="uid://dgvbaum76wg1i" path="res://addons/clickthrough/detection/transparent/transparent_detector.tscn" id="5_6eus7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_640sx"]
 atlas = ExtResource("1_npj5w")
@@ -49,27 +51,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mlcj6")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(546, 116)
 scale = Vector2(3.34375, 3.34375)
 sprite_frames = SubResource("SpriteFrames_kvgex")
 autoplay = "default"
 frame_progress = 0.276031
+script = ExtResource("3_qkapk")
 
-[node name="Button" type="Button" parent="Panel/AnimatedSprite2D"]
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -12.0
 offset_top = -9.0
 offset_right = 12.0
 offset_bottom = 13.0
 
-[node name="WallpaperMode" type="Node" parent="."]
-script = ExtResource("2_640sx")
+[node name="Clickthrough" parent="." instance=ExtResource("4_kvgex")]
+
+[node name="TransparentDetector" parent="Clickthrough" instance=ExtResource("5_6eus7")]
