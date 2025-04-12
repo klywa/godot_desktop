@@ -1,46 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctkhahffi3j57"]
+[gd_scene load_steps=4 format=3 uid="uid://ctkhahffi3j57"]
 
 [ext_resource type="Script" uid="uid://btqcfb2jvei2c" path="res://gui/main.gd" id="1_mlcj6"]
-[ext_resource type="Texture2D" uid="uid://c2th51m7t5joe" path="res://graphics/Box3.png" id="1_npj5w"]
-[ext_resource type="Script" uid="uid://bk8nacjbgjagg" path="res://gui/dragable.gd" id="3_qkapk"]
-[ext_resource type="PackedScene" uid="uid://blkxbgp2i3glp" path="res://addons/clickthrough/nodes/clickthrough_gdscript/clickthrough_gdscript.tscn" id="4_kvgex"]
-[ext_resource type="PackedScene" uid="uid://dgvbaum76wg1i" path="res://addons/clickthrough/detection/transparent/transparent_detector.tscn" id="5_6eus7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_640sx"]
-atlas = ExtResource("1_npj5w")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mlcj6"]
-atlas = ExtResource("1_npj5w")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t87ud"]
-atlas = ExtResource("1_npj5w")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkapk"]
-atlas = ExtResource("1_npj5w")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kvgex"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_640sx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mlcj6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t87ud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qkapk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://dywwftj00sqxc" path="res://game/sample_map.tscn" id="6_kvgex"]
+[ext_resource type="PackedScene" uid="uid://b4vlbj7du3w7k" path="res://game/square_piece.tscn" id="7_6eus7"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -51,21 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mlcj6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(546, 116)
-scale = Vector2(3.34375, 3.34375)
-sprite_frames = SubResource("SpriteFrames_kvgex")
-autoplay = "default"
-frame_progress = 0.276031
-script = ExtResource("3_qkapk")
+[node name="SampleMap" parent="." instance=ExtResource("6_kvgex")]
+position = Vector2(544, 320)
+scale = Vector2(2, 2)
 
-[node name="Button" type="Button" parent="AnimatedSprite2D"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -12.0
-offset_top = -9.0
-offset_right = 12.0
-offset_bottom = 13.0
-
-[node name="Clickthrough" parent="." instance=ExtResource("4_kvgex")]
-
-[node name="TransparentDetector" parent="Clickthrough" instance=ExtResource("5_6eus7")]
+[node name="Piece" parent="." instance=ExtResource("7_6eus7")]
+position = Vector2(184, 136)
+scale = Vector2(2, 2)

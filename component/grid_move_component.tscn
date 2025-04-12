@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://db06mxjgg6kdd"]
+
+[ext_resource type="Script" uid="uid://b7qjsoh082g1w" path="res://component/grid_move_component.gd" id="1_ugi4h"]
+
+[node name="GridMoveComponent" type="Node2D" node_paths=PackedStringArray("piece")]
+script = ExtResource("1_ugi4h")
+piece = NodePath("")
+
+[node name="upleft" type="RayCast2D" parent="."]
+position = Vector2(-8, -8)
+target_position = Vector2(-8, -8)
+hit_from_inside = true
+
+[node name="downright" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(8, 8)
+hit_from_inside = true
+
+[node name="upright" type="RayCast2D" parent="."]
+position = Vector2(8, -8)
+target_position = Vector2(8, -8)
+hit_from_inside = true
+
+[node name="downleft" type="RayCast2D" parent="."]
+position = Vector2(-8, 8)
+target_position = Vector2(-8, 8)
+hit_from_inside = true

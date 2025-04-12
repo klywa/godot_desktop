@@ -1,17 +1,15 @@
 extends Control
 
-@onready var switch_button: Button = $AnimatedSprite2D/Button
-@onready var anim_sprite := $AnimatedSprite2D
 
 var is_playing := true
 
 func _ready():
-	get_viewport().transparent_bg = true
+	pass
+	# get_viewport().transparent_bg = true
 	
 	# 设置窗口大小和位置基于它当前所在的屏幕
-	adjust_window_to_current_screen()
+	# adjust_window_to_current_screen()
 	
-	switch_button.pressed.connect(on_switch_button_pressed)
 
 func adjust_window_to_current_screen():
 	# 获取当前窗口位置
@@ -53,11 +51,3 @@ func adjust_window_to_current_screen():
 	# 设置窗口位置为当前屏幕的左上角
 	get_window().position = screen_position
 	print("Window position after reset: ", get_window().position)
-
-
-func on_switch_button_pressed():
-	is_playing = !is_playing
-	if is_playing:
-		anim_sprite.play()
-	else:
-		anim_sprite.pause()
