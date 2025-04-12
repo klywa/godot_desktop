@@ -49,7 +49,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_0ctqt")
 
 [node name="SampleMap" type="Node2D"]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 
 [node name="Map" type="TileMapLayer" parent="."]
 modulate = Color(1, 1, 1, 0.27451)

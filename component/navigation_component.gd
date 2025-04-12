@@ -7,6 +7,7 @@ func set_map(map_in: TileMapLayer) -> void:
     map = map_in
     astar_grid = AStarGrid2D.new()
     astar_grid.region = map.get_used_rect()
+    print("astar_grid.region", astar_grid.region)
     astar_grid.cell_size = map.tile_set.tile_size
     astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
@@ -18,5 +19,6 @@ func set_map(map_in: TileMapLayer) -> void:
 
     astar_grid.update()
 
-
+func get_id_path(start: Vector2i, end: Vector2i) -> Array[Vector2i]:
+    return astar_grid.get_id_path(start, end)
 
