@@ -1,22 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctkhahffi3j57"]
+[gd_scene load_steps=3 format=3 uid="uid://ctkhahffi3j57"]
 
 [ext_resource type="Script" uid="uid://btqcfb2jvei2c" path="res://gui/main.gd" id="1_mlcj6"]
 [ext_resource type="PackedScene" uid="uid://dywwftj00sqxc" path="res://game/sample_map.tscn" id="6_kvgex"]
-[ext_resource type="PackedScene" uid="uid://b4vlbj7du3w7k" path="res://game/square_piece.tscn" id="7_6eus7"]
 
-[node name="Main" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Main" type="Node2D"]
 script = ExtResource("1_mlcj6")
 
 [node name="SampleMap" parent="." instance=ExtResource("6_kvgex")]
-position = Vector2(544, 320)
-scale = Vector2(2, 2)
-
-[node name="Piece" parent="." instance=ExtResource("7_6eus7")]
-position = Vector2(184, 136)
-scale = Vector2(2, 2)
+position = Vector2(602, 558)

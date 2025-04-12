@@ -19,8 +19,11 @@ func _on_mouse_exited() -> void:
     print("mouse exited")
     amplifier.deamplify()
 
-func set_map(map: TileMapLayer) -> void:
-    self.map = map
+func _input(event: InputEvent) -> void:
+    if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+        print("left mouse button pressed")
+        # print the position of the mouse
+        print(get_global_mouse_position())
 
 func move() -> void:
     print("move")

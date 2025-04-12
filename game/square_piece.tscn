@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4vlbj7du3w7k"]
+[gd_scene load_steps=10 format=3 uid="uid://b4vlbj7du3w7k"]
 
 [ext_resource type="Script" uid="uid://l6grvxn4w5w2" path="res://game/piece.gd" id="1_ifse3"]
 [ext_resource type="Texture2D" uid="uid://b5orcc0vqjey5" path="res://pixel/square_sheet.png" id="1_nlpgl"]
 [ext_resource type="PackedScene" uid="uid://db06mxjgg6kdd" path="res://component/grid_move_component.tscn" id="2_na0c7"]
 [ext_resource type="Script" uid="uid://dwcshicc7oeyb" path="res://component/hover_amplifier.gd" id="4_0lhlx"]
+[ext_resource type="Script" uid="uid://bt4i3cbtbcnsv" path="res://component/navigation_component.gd" id="5_tya6f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vfnm"]
 atlas = ExtResource("1_nlpgl")
@@ -32,6 +33,7 @@ pivot_offset = Vector2(16, 16)
 value = 59.0
 fill_mode = 4
 texture_progress = SubResource("AtlasTexture_3vfnm")
+metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_wwe4f")
@@ -60,3 +62,6 @@ shape = SubResource("CircleShape2D_22l37")
 [node name="HoverAmplifier" type="Node" parent="." node_paths=PackedStringArray("entity")]
 script = ExtResource("4_0lhlx")
 entity = NodePath("..")
+
+[node name="NavigationComponent" type="Node" parent="."]
+script = ExtResource("5_tya6f")

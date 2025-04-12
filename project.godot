@@ -12,13 +12,16 @@ config_version=5
 
 config/name="godot_desktop"
 run/main_scene="uid://ctkhahffi3j57"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=2560
+window/size/viewport_height=1920
 window/size/resizable=false
 window/subwindows/embed_subwindows=false
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -27,5 +30,3 @@ project/assembly_name="godot_desktop"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
