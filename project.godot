@@ -15,6 +15,10 @@ run/main_scene="uid://ctkhahffi3j57"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://addons/signal_bus/signal_bus.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -26,6 +30,10 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="godot_desktop"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/signal_bus/plugin.cfg")
 
 [rendering]
 
